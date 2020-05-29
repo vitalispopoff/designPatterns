@@ -1,0 +1,23 @@
+@startuml
+
+package composite {
+
+    abstract class Node{
+
+    }
+
+    class Branch extends Node{
+    }
+
+    class Leaf extends Node{
+    }
+
+    class Queuer extends Node{
+            ~{field} branches
+    }
+
+
+
+}
+
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+
+package decorator{
+
+    abstract class  EquationComponent {
+            +{field} Double value
+            +{method} Double getValue ()
+            +{method} void setValue ()
+            +{method} double evaluate ()
+    }
+
+    +class Equation extends EquationComponent {
+        --
+    }
+
+    +abstract class EquationDecorator extends EquationComponent{
+            +{field} EquationDecorator
+        --
+    }
+
+    +class EquationDecoratorAdd extends EquationDecorator {
+
+    }
+
+    +class EquationDecoratorMultiply extends EquationDecorator {
+
+    }
+
+    EquationDecorator --o EquationComponent
+
+
+
+
+
+
+
+}
+
+@enduml

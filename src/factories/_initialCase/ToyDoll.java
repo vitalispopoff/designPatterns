@@ -1,4 +1,4 @@
-package factories.simpleFactory._initialCase;
+package factories._initialCase;
 
 public class ToyDoll extends Toy {
 

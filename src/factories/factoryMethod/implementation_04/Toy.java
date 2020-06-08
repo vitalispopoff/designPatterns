@@ -1,4 +1,4 @@
-package factories.simpleFactory._initialCase;
+package factories.factoryMethod.implementation_04;
 
 public class Toy {
 

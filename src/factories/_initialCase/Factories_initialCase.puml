@@ -1,0 +1,22 @@
+@startuml
+
++class ToyFactory{
+    --
+        +{method} Toy produceToy(String)
+}
+
++class Toy{
+        +{field} String toyName
+        +{field} boolean forGirls
+    --
+}
+
++class ToyBall extends Toy{
+}
+
++class ToyDoll extends Toy{
+}
+
+ToyFactory ..> Toy
+
+@enduml

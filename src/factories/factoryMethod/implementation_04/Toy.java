@@ -1,6 +1,6 @@
 package factories.factoryMethod.implementation_04;
 
-public class Toy {
+public abstract class Toy {
 
 	String toyName;
 	boolean forGirls;

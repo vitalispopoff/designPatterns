@@ -1,8 +1,8 @@
 package factories.factoryMethod.implementation_04;
 
-public class ToyFactory {
+public class ToyProducer {
 
-	public Toy produceToy(SimpleFactory toyType) {
+	public Toy produceToy(Factory toyType) {
 		return toyType.constructToy();
 	}
 }

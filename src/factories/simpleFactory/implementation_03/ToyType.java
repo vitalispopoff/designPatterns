@@ -1,6 +1,6 @@
 package factories.simpleFactory.implementation_03;
 
-public enum ToyType implements SimpleFactory {
+public enum ToyType implements Factory {
 
 	BALL {
 		public Toy constructToy() {

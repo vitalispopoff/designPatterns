@@ -2,7 +2,7 @@ package factories.factoryMethod.implementation_04;
 
 import factories.factoryMethod.implementation_04.toys.*;
 
-public enum ToyType implements SimpleFactory {
+public enum ToyType implements Factory {
 
 	BALL {
 		public Toy constructToy() {

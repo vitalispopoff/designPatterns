@@ -1,7 +1,7 @@
 @startuml
 
-+class ToyFactory{
-        +{field} SimpleFactory
++class ToyProducer{
+        +{field} Factory
     --
         +{method} Toy produceToy (String){constructToy(...)}
 }
@@ -12,26 +12,28 @@
     --
 }
 
--class ToyBall extends Toy{
+package Toys {
+    +class ToyBall extends Toy{
+    }
+
+    +class ToyDoll extends Toy{
+    }
 }
 
--class ToyDoll extends Toy{
-}
-
-+interface SimpleFactory{
++interface Factory{
     --
         +{method} Toy constructToy(String)
 }
 
-+enum ToyType implements SimpleFactory{
++enum ToyType implements Factory{
 BALL {constructToy(...)},
 DOLL {constructToy(...)},
 }
 
-ToyFactory -right-* Toy
+ToyProducer -right-* Toy
 
-ToyFactory -up-o SimpleFactory
-ToyType -up-> ToyBall
-ToyType -up-> ToyDoll
+ToyProducer -up-o Factory
+ToyType .up.> ToyBall
+ToyType .up.> ToyDoll
 
 @enduml

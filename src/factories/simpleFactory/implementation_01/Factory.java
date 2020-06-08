@@ -1,8 +1,8 @@
-package factories._initialCase;
+package factories.simpleFactory.implementation_01;
 
-public class ToyFactory {
+public class Factory {
 
-	public Toy produceToy(String toyName) {
+	public Toy constructToy(String toyName) {
 		if (toyName == "[Bb]all")
 			return new ToyBall();
 		else if (toyName == "[Dd]oll")

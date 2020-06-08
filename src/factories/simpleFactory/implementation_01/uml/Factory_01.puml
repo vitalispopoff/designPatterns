@@ -1,7 +1,7 @@
 @startuml
 
-+class ToyFactory{
-        +{field} SimpleFactory
++class ToyProducer{
+        +{field} Factory
     --
         +{method} Toy produceToy (String)
 }
@@ -18,15 +18,15 @@
 +class ToyDoll extends Toy{
 }
 
-+class SimpleFactory{
++class Factory{
     --
         +{method} Toy constructToy(String)
 }
 
-ToyFactory -right-* Toy
+ToyProducer -right-* Toy
 
-ToyFactory -up-o SimpleFactory
-SimpleFactory .up.> ToyBall
-SimpleFactory .up.> ToyDoll
+ToyProducer -up-o Factory
+Factory .up.> ToyBall
+Factory .up.> ToyDoll
 
 @enduml

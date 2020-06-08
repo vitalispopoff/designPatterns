@@ -1,6 +1,6 @@
 package factories.simpleFactory.implementation_02;
 
-public interface SimpleFactory {
+public interface Factory {
 
 	Toy constructToy();
 }

@@ -1,6 +1,6 @@
 @startuml
 
-+class ToyFactory{
++class ToyProducer{
     --
         +{method} Toy produceToy(String)
 }
@@ -17,6 +17,6 @@
 +class ToyDoll extends Toy{
 }
 
-ToyFactory ..> Toy
+ToyProducer ..> Toy
 
 @enduml

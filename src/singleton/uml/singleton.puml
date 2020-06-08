@@ -1,6 +1,6 @@
 @startuml
 
-package Singleton {
+package singleton {
 
     +class Single{
             +{field} {static} single Single

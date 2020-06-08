@@ -1,4 +1,4 @@
-package Decorator;
+package decorator;
 
 public class EquationDecoratorAdd extends EquationDecorator {
 

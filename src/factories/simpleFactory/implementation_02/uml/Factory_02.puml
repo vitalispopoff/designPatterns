@@ -28,7 +28,7 @@ BALL {constructToy(...)},
 DOLL {constructToy(...)},
 }
 
-ToyProducer -down-* Toy
+ToyProducer -right-* Toy
 
 ToyProducer -up-o ToyType
 ToyType -right-|> Factory

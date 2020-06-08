@@ -17,6 +17,6 @@
 +class ToyDoll extends Toy{
 }
 
-ToyProducer ..> Toy
+ToyProducer .left.> Toy
 
 @enduml

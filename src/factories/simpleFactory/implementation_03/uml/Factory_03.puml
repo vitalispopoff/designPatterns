@@ -23,15 +23,16 @@
         +{method} Toy constructToy(String)
 }
 
-+enum ToyType implements Factory{
++enum ToyType{
 BALL {constructToy(...)},
 DOLL {constructToy(...)},
 }
 
 ToyProducer -right-* Toy
 
-ToyProducer -up-o Factory
-ToyType -up-> ToyBall
-ToyType -up-> ToyDoll
+ToyProducer -up-o ToyType
+ToyType -right-|> Factory
+ToyType .up.> ToyBall
+ToyType .up.> ToyDoll
 
 @enduml

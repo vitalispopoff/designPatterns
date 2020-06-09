@@ -1,0 +1,45 @@
+@startuml
+
+package CLIENT <<Rectangle>>{
+    +class Client{
+            +{field} Creator
+        --
+            +{method} Product anOperation (){...FactoryMethod()}
+    }
+}
+
+package PRODUCT <<Rectangle>>{
+    +class Product{
+            +{field} String ProductName
+            +{field} boolean forGirls
+        --
+    }
+    package Products {
+        +class ConcreteProduct_1 extends Product{
+        }
+        +class ConcreteProduct_2 extends Product{
+        }
+    }
+}
+
+package FACTORY <<Rectangle>>{
+
++interface Creator{
+    --
+        +{method} Product FactoryMethod()
+}
+
++enum ConcreteCreator {
+Product_1 Context {FactoryMethod()},
+Product_2 Context {FactoryMethod()},
+}
+
+}
+
+Client -up-o Creator
+Product *-right- Client
+ConcreteCreator ..right..|> Creator
+ConcreteCreator .up.> ConcreteProduct_1
+ConcreteCreator .up.> ConcreteProduct_2
+
+@enduml

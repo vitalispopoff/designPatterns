@@ -1,0 +1,75 @@
+@startuml
+
+
+
+
+package toys{
+
+    +abstract class Toy #white{
+    }
+
+    +abstract class ToyBall{
+    }
+
+    +class ToyBallsForBoys {
+    }
+    +class ToyBallsForGirls {
+    }
+    
+    +abstract class ToyDoll{
+    }
+    
+    +class ToyDollsForBoys {
+    }
+    +class ToyDollsForGirls  {
+    }
+    
+    
+    ToyDoll -down-|> Toy #black
+
+    ToyBallsForGirls -left-|> ToyBall
+    ToyBallsForBoys -right-|> ToyBall
+    
+    ToyBall -up-|> Toy #black
+    
+    ToyDollsForBoys -right-|> ToyDoll
+    ToyDollsForGirls -left-|> ToyDoll
+    
+}
+
++class ToyProducer{
+}
+
++interface Factory{
+}
+
+
++enum ToyType #white{
+}
+
++class ToyBoyFactory {
+}
+
++class ToyGirlFactory {
+}
+
+
+ToyProducer -up-o Factory
+
+
+ToyBoyFactory .right.|> Factory
+ToyGirlFactory .left.|> Factory
+
+ToyType .up.|> Factory #black
+ToyType .up.> ToyBoyFactory #black
+ToyType .up.> ToyGirlFactory #black
+
+
+ToyGirlFactory .down..> ToyDollsForGirls
+ToyGirlFactory .down..> ToyBallsForGirls
+
+ToyBoyFactory .down..> ToyDollsForBoys
+ToyBoyFactory .down..> ToyBallsForBoys
+
+
+@enduml

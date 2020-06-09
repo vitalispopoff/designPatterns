@@ -6,7 +6,7 @@
         +{method} Toy produceToy (String){constructToy(...)}
 }
 
-+class Toy{
++abstract class Toy{
         +{field} String toyName
         +{field} boolean forGirls
     --

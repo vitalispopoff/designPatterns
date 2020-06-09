@@ -9,7 +9,7 @@ package CLIENT <<Rectangle>>{
 }
 
 package PRODUCT <<Rectangle>>{
-    +class Product{
+    +abstract class Product{
             +{field} String ProductName
             +{field} boolean forGirls
         --

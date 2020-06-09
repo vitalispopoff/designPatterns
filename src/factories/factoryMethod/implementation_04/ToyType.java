@@ -8,8 +8,6 @@ public enum ToyType implements Factory {
 		public Toy constructToy() {
 			return new ToyBall();
 		}
-
-
 	},
 	DOLL {
 		public Toy constructToy() {

@@ -1,8 +1,5 @@
 @startuml
 
-
-
-
 package toys{
 
     +abstract class Toy #white{
@@ -37,7 +34,7 @@ package toys{
     
 }
 
-+class ToyProducer{
++class ToyProducer #lightgrey{
 }
 
 +interface Factory{
@@ -54,15 +51,18 @@ package toys{
 }
 
 
-ToyProducer -up-o Factory
+ToyProducer -down-> Factory
+ToyProducer -left-> ToyType
 
 
 ToyBoyFactory .right.|> Factory
 ToyGirlFactory .left.|> Factory
 
-ToyType .up.|> Factory #black
-ToyType .up.> ToyBoyFactory #black
-ToyType .up.> ToyGirlFactory #black
+'ToyType .down.|> Factory #black
+ToyType <-up-> Factory #black
+
+ToyType .down.> ToyBoyFactory #black
+ToyType .down.> ToyGirlFactory #black
 
 
 ToyGirlFactory .down..> ToyDollsForGirls

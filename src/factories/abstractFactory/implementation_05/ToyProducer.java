@@ -4,6 +4,7 @@ import factories.abstractFactory.implementation_05.toys.Toy;
 
 public class ToyProducer {
 
-	public Toy produceToy()
-	{return null;}
+	public Toy produceToy(String toyName, ToyType toyType) {
+		return Factory.constructToy(toyName, toyType);
+	}
 }

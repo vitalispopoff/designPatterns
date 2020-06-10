@@ -13,10 +13,10 @@ public class Main {
 		ArrayList<Toy>
 				toysProduced = new ArrayList<>();
 		String[]
-				toysToProduce = {"Ball", "ball", "Doll", "doll", "roll"};
+				toysRequest = {"Ball", "ball", "Doll", "doll", "roll"};
 
-		for (String toyRequest : toysToProduce) {
-			toysProduced.add(client.produceToy(toyRequest));
+		for (String toy : toysRequest) {
+			toysProduced.add(client.produceToy(toy));
 		}
 
 		for (Toy toy : toysProduced)

@@ -6,8 +6,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-	public static void main(String[] args) {
-
+	public static void testFactory() {
 		Factory[]
 				factories = {
 				ToyType.BOY.getFactory(),
@@ -28,7 +27,31 @@ public class Main {
 					+ toysProduced.indexOf(toy)
 					+ ": "
 					+ (toy == null ? "not a toy" : toy.toString())
-			);    // temporarily disabled
+			);
+	}
 
+	public static void testProducer() {
+
+		ToyProducer
+				toyProducer = new ToyProducer();
+		String[]
+				toyRequest = {"Ball", "ball", "Doll", "doll", "roll"};
+		ArrayList<Toy> toysProduced = new ArrayList<>();
+
+		for (ToyType toyType : ToyType.values()) {
+			for (String toy : toyRequest) toysProduced.add(toyProducer.produceToy(toy, toyType));
+		}
+
+		for (Toy toy : toysProduced)
+			System.out.println(toy == null
+					? "toy is null"
+					: toy.toString()
+			);
+	}
+
+	public static void main(String[] args) {
+
+//		testFactory();
+		testProducer();
 	}
 }

@@ -1,6 +1,8 @@
 @startuml
 
 +abstract class Node{
+        +{field}{static} final Node nullNode
+    ..
         +{field} Node prev = nullNode;
         +{field} Node next = nullNode;
         +{field} double value

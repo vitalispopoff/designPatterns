@@ -1,4 +1,4 @@
-package singleton;
+package tons.singleton;
 
 public class Single_01 {
 	private Single_01(){}

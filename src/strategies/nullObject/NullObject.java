@@ -1,4 +1,4 @@
-package strategy.nullObject;
+package strategies.nullObject;
 
 public class NullObject {
 }

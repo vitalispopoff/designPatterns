@@ -1,6 +1,7 @@
-package prototype.implementation_01;
+package strategies.nullObject.implementation_01;
 
 public class NullNode extends Node {
+
 
 //	@formatter:off
 
@@ -17,7 +18,7 @@ public class NullNode extends Node {
 	@Override NullNode getPrev(){ return this; }
 	@Override NullNode getNext(){ return this; }
 	@Override double getValue(){ return Double.NaN; }
-	@Override String getOperationType(){ return ""; }
+	@Override String getOperationType(){ return "null"; }
 
 //	@formatter:on
 }

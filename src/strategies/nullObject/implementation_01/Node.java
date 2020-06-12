@@ -1,10 +1,12 @@
-package prototype.implementation_01;
+package strategies.nullObject.implementation_01;
 
 public abstract class Node {
 
+	public static final Node nullNode = new NullNode();
+
 	Node
-			prev = new NullNode(),
-			next = new NullNode();
+			prev = nullNode,
+			next = nullNode;
 	double value = Double.NaN;
 	String operationType = "";
 

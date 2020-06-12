@@ -1,0 +1,16 @@
+@startuml
+
++class Node{
+        +{field} Node prev = null;
+        +{field} Node next = null;
+        +{field} double value
+        +{field} String operationType
+    --
+        +{method} join (Node)
+        +{method} leave ()
+        +{method} boolean isEmpty
+        +{method} operate
+    ..getters & setters..
+}
+
+@enduml

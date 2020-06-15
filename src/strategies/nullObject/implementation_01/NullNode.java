@@ -11,7 +11,7 @@ public class NullNode extends Node {
 	@Override void setValue(double value){ }
 	@Override void setOperationType(String operationType){ }
 
-	@Override boolean isEmpty(){return false;}
+//	@Override boolean isEmpty(){return false;}
 	@Override void setPrev(Node prev){ }
 	@Override void setNext(Node next){ }
 

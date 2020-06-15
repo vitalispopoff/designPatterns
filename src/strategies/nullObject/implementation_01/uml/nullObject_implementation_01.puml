@@ -1,32 +1,35 @@
 @startuml
 
 +abstract class Node{
-        +{field}{static} final Node nullNode
+        +{field}{static} Node : nullNode {final}
     ..
-        +{field} Node prev = nullNode;
-        +{field} Node next = nullNode;
-        +{field} double value
-        +{field} String operationType = ""
+        +{field} prev : Node = nullNode;
+        +{field} next : Node = nullNode;
+        +{field} value : double
+        +{field} operationType : String = ""
     --
-        +{method} join (Node)
-        +{method} leave ()
-        +{method} boolean isEmpty
+        +{method} join : Node
+        +{method} leave
+'        +{method} isEmpty : boolean
         +{method} operate
-    ..getters & setters..
+'    ..getters & setters..
 }
 
 +class RealNode extends Node{
 }
+    hide RealNode member
 
 +class NullNode extends Node{
-        +{field} String operationType = "null"
-    --
-        +{method} join (Node)
-        +{method} leave ()
-        +{method} boolean isEmpty
+    -- @Overrides--
+        +{method} join : Node
+        +{method} leave
         +{method} operate
     ..getters & setters..
-
+'        +{method} isEmpty : boolean = true
+        +{method} getValue : double = NaN
+        +{method} getPrev : Node = self
+        +{method} getNext : Node = self
+        +{method} getOperationType : String = "null"
 }
 
 @enduml

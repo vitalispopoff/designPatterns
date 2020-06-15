@@ -7,8 +7,10 @@ public abstract class Node {
 	Node
 			prev = nullNode,
 			next = nullNode;
-	double value = Double.NaN;
-	String operationType = "";
+	double
+			value = Double.NaN;
+	String
+			operationType = "";
 
 	void join(Node host){
 		setPrev(host);
@@ -24,7 +26,7 @@ public abstract class Node {
 
 //	@formatter:off
 
-	boolean isEmpty(){ return prev==null & next == null; }
+//	boolean isEmpty(){ return prev==null & next == null; }
 
 	void operate(){ System.out.println(getOperationType().concat(Double.toString(getValue()))); }
 

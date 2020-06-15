@@ -1,0 +1,43 @@
+@startuml
+
+hide members
+
+package Channels{
+
+    interface Channeling {
+    }
+    abstract class Channel implements Channeling{
+    }
+
+        abstract class InputChannel extends Channel{
+        }
+
+            class MidiChannel extends InputChannel{
+            }
+
+            class AudioChannel extends InputChannel{
+            }
+
+        abstract class OutputChannel implements Channel{
+        }
+
+            class FXChannel extends OutputChannel{
+            }
+
+            class ChannelGroup extends OutputChannel{
+            }
+}
+
+package Crossings {
+
+    interface Crossable{
+    }
+
+        abstract class I_O implements Crossable{
+        }
+
+}
+
+Channel "1" o-left-> "2" Crossable
+
+@enduml

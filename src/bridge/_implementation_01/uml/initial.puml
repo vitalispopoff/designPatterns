@@ -1,0 +1,8 @@
+@startuml
+
+hide fields
+class Client{
+    +{method} callOperation
+}
+
+@enduml

@@ -1,0 +1,35 @@
+@startuml
+
+package insAndOuts <<Rectangle>>{
+    hide members
+
+    interface I_O {
+    }
+}
+
+package channels <<Rectangle>>{
+    hide members
+
+    interface Channel {
+    }
+
+    class MidiChannel {
+    }
+    MidiChannel -up-|> Channel
+
+    class AudioChannel {
+    }
+    AudioChannel -up-|> Channel
+
+    class FXChannel {
+    }
+    FXChannel -down-|> Channel
+
+    class ChannelGroup {
+    }
+    ChannelGroup -down-|> Channel
+}
+
+I_O <|-right- Channel
+
+@enduml

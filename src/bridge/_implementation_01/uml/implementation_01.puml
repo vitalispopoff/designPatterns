@@ -1,0 +1,37 @@
+@startuml
+
+hide Client method
+
+class Client{
+
+}
+
+Client *--> "1" Abstraction
+
+Abstraction *--> "2" Implementation
+
+class Abstraction {
+        ~{field} implementation : HashMap (name : String, impl : Implementation)
+    --
+        ~{method} callOperation (name: String)
+}
+
+note right of Abstraction #white : callOperation { ...implementedOperation }
+
+
+
+hide Implementation field
+abstract class  Implementation  {
+    ~{method}{abstract} implementedOperation
+}
+
+hide  ImplementationA member
+class ImplementationA extends Implementation{
+}
+
+hide  ImplementationB member
+
+class ImplementationB extends Implementation{
+}
+
+@enduml

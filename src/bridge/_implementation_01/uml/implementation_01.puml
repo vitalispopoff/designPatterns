@@ -8,7 +8,7 @@ class Client{
 
 Client ..> Abstraction : callOperation
 
-Abstraction *--> "2" Implementation
+Abstraction *--> "2" Implementation #blue
 
 class Abstraction {
         ~{field} implementation : HashMap (context : String, impl : Implementation)

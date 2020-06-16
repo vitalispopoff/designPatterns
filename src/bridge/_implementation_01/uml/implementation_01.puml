@@ -1,24 +1,22 @@
 @startuml
 
-hide Client method
+hide Client field
 
 class Client{
-
+    ~{method}{static} callOperation (context : String)
 }
 
-Client *--> "1" Abstraction
+Client ..> Abstraction : callOperation
 
 Abstraction *--> "2" Implementation
 
 class Abstraction {
-        ~{field} implementation : HashMap (name : String, impl : Implementation)
+        ~{field} implementation : HashMap (context : String, impl : Implementation)
     --
         ~{method} callOperation (name: String)
 }
 
-note right of Abstraction #white : callOperation { ...implementedOperation }
-
-
+note top of Abstraction #white : callOperation { ...implementedOperation }
 
 hide Implementation field
 abstract class  Implementation  {

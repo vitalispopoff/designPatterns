@@ -11,7 +11,7 @@ public class Abstraction {
 		implementation.put("b", new ImplementationB());
 	}
 
-	void callOperation(String name){
-		implementation.get(name).implementedOperation();
+	void callOperation(String context){
+		implementation.get(context).implementedOperation();
 	}
 }

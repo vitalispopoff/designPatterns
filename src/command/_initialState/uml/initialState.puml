@@ -1,0 +1,74 @@
+@startuml
+
+
+skinparam class{
+    BorderColor<<Command>> #blue
+    BorderColor<<CommandImpl>> #blue
+    BackgroundColor<<Command>> #lightGreen
+}
+
+hide field
+
+
+class Application{
+    {method} add (Document)
+}
+
+    Application o-right-> "*" Menu
+
+class Menu{
+    {method} add (MenuItem)
+}
+
+    Menu o-right-> "*" MenuItem
+    note top of MenuItem #white : command->execute()
+
+class MenuItem{
+    {method} clicked ()
+}
+
+    Application o--down-> "*" Document
+class Document{
+    {method} open ()
+    {method} close ()
+    {method} cut ()
+    {method} copy ()
+    {method} paste ()
+}
+
+    MenuItem o-right- Command #blue : command >
+
+abstract Command <<Command >>{
+    {method} execute ()
+}
+
+    Command <|-down- PasteCommand #blue
+    Document <-left- PasteCommand #blue
+
+class PasteCommand <<CommandImpl>> {
+    {method} execute
+}
+note bottom of PasteCommand #white : document->paste()
+
+    Command <|-- OpenCommand #blue
+    Application <-- OpenCommand #blue
+
+class OpenCommand <<CommandImpl>> {
+    {method} execute ()
+    {method} askUser ()
+}
+
+
+    MacroCommand o-left-|> "*" Command #blue : commands >
+
+class MacroCommand <<CommandImpl>> {
+    {method} execute ()
+}
+note bottom of MacroCommand #white
+    for every c in commands
+    c->execute()
+endnote
+
+
+
+@enduml

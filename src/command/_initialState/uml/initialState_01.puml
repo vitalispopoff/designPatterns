@@ -1,0 +1,64 @@
+@startuml
+
+    hide field
+
+skinparam class{
+
+    BorderColor<<Command>> #blue
+    BackgroundColor<<Command>> #lightGreen
+
+    BorderColor<<CommandImpl>> #blue
+
+    BackgroundColor<<.>> #whtie
+    BorderColor<<.>> #gray
+}
+
+package CLIENT/RECEIVER <<Rectangle>>{
+
+    class Application{
+        {method} add (Document)
+    }
+}
+
+    Application o-up-> "*" Menu #Grey
+
+class Menu <<.>> {
+    {method} add (MenuItem)
+}
+
+package INVOKER <<Rectangle>>{
+
+    class MenuItem{
+        {method} clicked ()
+    }
+}
+
+     Application .right. MenuItem #white
+
+    Menu o-right-> "*" MenuItem #Grey
+
+
+
+package COMMAND <<Rectangle>>{
+
+    abstract Command <<Command >>{
+        {method} execute ()
+    }
+}
+        MenuItem o-right- Command #blue : command >
+
+
+
+package ConcreteCOMMAND <<Rectangle>> {
+
+    class OpenCommand <<CommandImpl>> {
+        {method} execute ()
+        {method} askUser ()
+    }
+}
+
+        Command <|-- OpenCommand #blue
+        Application <- OpenCommand #blue
+        Application .> OpenCommand #blue
+
+@enduml

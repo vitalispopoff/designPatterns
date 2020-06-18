@@ -1,0 +1,51 @@
+@startuml
+
+
+skinparam class{
+    BorderColor<<Command>> #blue
+    BorderColor<<CommandImpl>> #blue
+    BackgroundColor<<Command>> #lightGreen
+}
+
+hide field
+
+
+class Application{
+    {method} add (Document)
+}
+
+    Application o-right-> "*" Menu
+
+class Menu{
+    {method} add (MenuItem)
+}
+
+    Menu o-right-> "*" MenuItem
+
+class MenuItem{
+    {method} clicked ()
+}
+
+    Application o--down-> "*" Document
+class Document{
+    {method} open ()
+    {method} close ()
+    {method} cut ()
+    {method} copy ()
+    {method} paste ()
+}
+
+    MenuItem o-right- Command #blue : command >
+
+abstract Command <<Command >>{
+    {method} execute ()
+}
+
+    Command <|-down- PasteCommand #blue
+    Document <-left- PasteCommand #blue
+
+class PasteCommand <<CommandImpl>> {
+    {method} execute
+}
+
+@enduml

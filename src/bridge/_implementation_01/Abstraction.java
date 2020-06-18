@@ -13,7 +13,7 @@ public class Abstraction implements Abstract {
 		implementation.put("b", new ImplementationB());
 	}
 
-	void callOperation(String name){
+	public void callOperation(String name){
 		implementation.get(name).implementedOperation();
 	}
 }

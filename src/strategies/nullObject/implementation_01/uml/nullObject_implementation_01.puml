@@ -10,22 +10,20 @@
     --
         +{method} join : Node
         +{method} leave
-'        +{method} isEmpty : boolean
         +{method} operate
-'    ..getters & setters..
 }
 
 +class RealNode extends Node{
 }
     hide RealNode member
 
+    hide NullNode field
 +class NullNode extends Node{
-    -- @Overrides--
+    .. @Overrides..
         +{method} join : Node
         +{method} leave
         +{method} operate
     ..getters & setters..
-'        +{method} isEmpty : boolean = true
         +{method} getValue : double = NaN
         +{method} getPrev : Node = self
         +{method} getNext : Node = self

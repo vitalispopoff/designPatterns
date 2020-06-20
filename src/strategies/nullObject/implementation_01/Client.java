@@ -1,6 +1,6 @@
 package strategies.nullObject.implementation_01;
 
-public class Main {
+public class Client {
 
 	public static void main(String[] args) {
 

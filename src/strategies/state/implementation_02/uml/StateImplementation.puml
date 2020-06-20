@@ -1,0 +1,32 @@
+@startuml
+
+hide members
+show Context members
+show Block methods
+
+abstract Context{
+        {field} blockState : Block
+    --
+        {method} interaction : {blockState->interact (self)}
+}
+
+abstract Block{
+        {method}{abstract} interact (Context)
+}
+
+class DirtBlock
+class FarmlandBlock
+class GrassBlock
+
+    Context o--> Block : interaction
+
+    Block <|--- DirtBlock
+    Block <|--FarmlandBlock
+    Block <|--- GrassBlock
+
+    FarmlandBlock .down.> DirtBlock : interact
+    GrassBlock .left.> FarmlandBlock : interact
+    DirtBlock .left.> GrassBlock : interact
+
+
+@enduml
